@@ -1,10 +1,13 @@
 // App.jsx is root component of application - first to be rendered to the DOM
-import "./App.css";
+import { NavBar, Home } from "./components";
 
 const App = () => {
     return (
         <div className="App">
-            <div className="content"></div>
+            <NavBar />
+            <div className="content">
+                <Home />
+            </div>
         </div>
     );
 };

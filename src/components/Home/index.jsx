@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import BlogList from "../BlogList";
 
 const Home = () => {
     const [blogs, setBlogs] = useState([
@@ -12,7 +13,7 @@ const Home = () => {
         {
             title: "Pas de la Casa - Andorra",
             body: "Skiing in Pas de la Casa, located in the Grandvalira ski area of Andorra, offers an exhilarating experience with a focus on affordability and vibrant apres-ski culture. Skiers and snowboarders can enjoy a wide range of terrain suitable for all levels, along with excellent snow conditions. The resort features long, well-groomed runs, terrain parks for freestyle enthusiasts, and plenty of opportunities for off-piste adventures. Pas de la Casa is known for its lively nightlife scene, making it a popular choice for younger and budget-conscious travelers. With easy access to neighboring resorts and a variety of dining and entertainment options, it's a bustling and accessible destination for winter sports enthusiasts.",
-            author: "Duncan",
+            author: "Charlie",
             id: 2,
         },
         {
@@ -24,12 +25,11 @@ const Home = () => {
     ]);
     return (
         <div className="home">
-            {blogs.map(blog => (
-                <div className="blog-preview" key={blog.id}>
-                    <h2>{blog.title}</h2>
-                    <p>Written by: {blog.author}</p>
-                </div>
-            ))}
+            <BlogList blogs={blogs} title="All Blogs" />
+            <BlogList
+                blogs={blogs.filter(blog => blog.author === "Duncan")}
+                title="Duncan's Blogs"
+            />
         </div>
     );
 };
