@@ -28,7 +28,13 @@
 .navbar a:hover {
     color: rgb(0, 195, 255);
 }
-.content {
+
+.navbar a.active {
+    text-decoration: underline;
+    color: rgb(0, 195, 255);
+}
+
+main {
     max-width: 600px;
     margin: 40px auto;
     padding: 20px;
