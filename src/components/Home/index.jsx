@@ -14,11 +14,17 @@ const Home = () => {
 
     useEffect(() => {
         setTimeout(() => {
-            axios.get("http://localhost:8000/blogs").then(res => {
-                console.log(res.data);
-                setBlogs(res.data);
-                setIsPending(false);
-            });
+            axios
+                .get("http://localhost:8000/blogs")
+                .then(res => {
+                    console.log(res);
+
+                    setBlogs(res.data);
+                    setIsPending(false);
+                })
+                .catch(err => {
+                    console.log("Error:", err.message);
+                });
         }, 500);
     }, []);
 
